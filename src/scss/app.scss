@@ -1,0 +1,42 @@
+//base
+@import 'base/normalize';
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/DarkModeButtom';
+@import 'base/DarkModeFunction';
+@import 'base/icons';
+@import 'base/botones';
+@import 'base/alerta'; //registro.php
+
+//layout
+@import 'layout/header'; //index.html
+@import 'layout/Info-boxes.scss'; //index.html
+@import 'layout/Slider'; //index.html
+@import 'layout/Navegacion'; // todas las paginas excepto index.html y registro.html
+@import 'layout/FooterPrincipal'; //Pagina Principal
+@import 'layout/FooterSecundario'; //Pagina Secundarias
+@import 'layout/us'; //us.php
+@import 'layout/CloseSession'; //CloseSession
+@import 'layout/base'; //CloseSession
+@import 'layout/tabs';
+@import 'layout/PaginatorMenu';
+@import 'layout/AccessAndRegistration'; //registro.php
+@import 'layout/Confirmation'; //Confirmation.php
+@import 'layout/Reservation'; //Reservation/Reservation.php
+@import 'layout/Tables'; //Reservation/Reservation.php
+@import 'layout/Development'; 
+
+//ADMINISTRADOR
+@import 'admin/adminPage'; //Pagina Secundarias
+@import 'admin/CRUDMenu'; //Pagina Secundarias
+@import 'admin/CRUDTable'; //Pagina Secundarias
+
+//CRUD MENU
+@import 'CRUDmenu/Create';
+@import 'CRUDmenu/Update';
+
+//CRUDtable
+@import 'CRUDTable/CreateTable';
+@import 'CRUDTable/UpdateTable';
+
+

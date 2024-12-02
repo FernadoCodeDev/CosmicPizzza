@@ -1,0 +1,15 @@
+.boton-Mustard-block {
+  @include boton($Mustard, block);
+}
+
+.boton-Mustard-inline-block {
+    @include boton($Mustard, inline-block);
+}
+
+//$GreenPine
+
+.alinear-derecha {
+    display: flex;
+    justify-content: end;
+    margin-top: 2rem;
+}

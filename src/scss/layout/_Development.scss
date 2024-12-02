@@ -1,0 +1,46 @@
+//
+.Explanation {
+ display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  @include laptop {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  h1 {
+    text-align: center;
+    font-family: $Fuente_Secundaria, Arial, Helvetica, sans-serif;
+    color: $negro;
+    font-weight: bold;
+    font-size: 2rem;
+    
+    @include laptop {
+        font-size: 4rem;
+        grid-column: span 2;
+    }
+  }
+
+  .ExplanationText {
+    p,
+    li {
+      margin: 1rem;
+      font-size: 0.5rem;
+      font-family: Arial, Helvetica, sans-serif;
+      color: $DarkGray;
+      list-style: circle;
+      @include laptop {
+        font-size: 1.2rem;
+      }
+      span {
+          font-weight: bold;
+      }
+    }
+
+  }
+  .ExplanationVideo {
+    margin: 1rem;
+    video {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

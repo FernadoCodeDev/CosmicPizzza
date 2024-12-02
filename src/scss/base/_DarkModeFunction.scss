@@ -1,0 +1,722 @@
+/* Transición global para los cambios de color */
+body {
+  transition: background-color 1s ease, color 1s ease;
+}
+
+/*Modo oscuro */
+.DarkMode-function {
+  background-color: $Carbonblack;
+  h1 {
+    color: $blanco;
+  }
+
+  h3 {
+    color: $gris;
+  }
+
+  p {
+    color: $gris;
+  }
+
+  //Header
+  .Header {
+    .mobile-menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1.5rem;
+      cursor: pointer;
+
+      @include tablet {
+        display: none;
+      }
+
+      img {
+        width: 5rem;
+        height: auto;
+      }
+    }
+
+    // Navegación
+    .navegacion {
+      a {
+        color: $blanco;
+
+        &:hover {
+          transition: 1s ease;
+          color: $Mustard;
+        }
+
+        @include tablet {
+          background-color: $CrimsonRed;
+          border-right: $Mustard solid 2px;
+          color: $Mustard;
+
+          &:hover {
+            transition: 1s ease;
+            background-color: $Mustard;
+            color: $CrimsonRed;
+          }
+        }
+
+        &:last-child {
+          border-right: none;
+        }
+
+        @include desktop {
+          font-size: 2.5rem;
+        }
+      }
+
+      &.mostrar {
+        max-height: 18rem;
+        opacity: 1;
+
+        @media (min-width: 600px) {
+          padding-bottom: 8rem;
+        }
+      }
+
+      @include tablet {
+        border: $Mustard solid 2px;
+        background-color: $CrimsonRed;
+        color: $Mustard;
+      }
+
+      @include desktop {
+        border: $Mustard solid 2px;
+        background-color: $CrimsonRed;
+        color: $Mustard;
+      }
+    }
+
+    .Qualification {
+      color: $Mustard;
+    }
+
+    .Information-and-image {
+      p {
+        color: white;
+      }
+    }
+  }
+  //Header
+
+  //Info-boxes
+  .Info-boxes {
+    background-color: $Carbonblack;
+  }
+
+  .Paintings {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include laptop {
+      grid-template-columns: 1.5fr 1.5fr 1fr; // 2 columnas de 1.5 y 1 columna de 1fr
+    }
+  }
+
+  .ChartNo1 {
+    background-color: $negro;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    @include tablet {
+      grid-column: span 2;
+    }
+
+    @include laptop {
+      grid-column: span 1.5; // Cada uno toma 1 columna pero la columna es de 1.5fr
+    }
+  }
+  .ChartNo2 {
+    background-color: $BrownEarth;
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    @include laptop {
+      grid-column: span 1; // Cada uno toma 1 columna pero la columna es de 1.5fr
+    }
+  }
+  .ChartNo3 {
+    background-color: $Mustard;
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    @include laptop {
+      grid-column: span 1; // Ocupan las 3 columnas de 1fr cada una
+    }
+  }
+  .ChartNo4 {
+    background-color: $blanco;
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    @include laptop {
+      grid-column: span 1; // Ocupan las 3 columnas de 1fr cada una
+    }
+  }
+  .ChartNo5 {
+    background-color: $DarkLimeGreen;
+  }
+
+  //PaginatorMenu
+  .tabsMenu {
+    background-color: $CrimsonRed;
+    color: $blanco;
+
+    button {
+      background-color: $CrimsonRed;
+      color: $blanco;
+      font-family: $Fuente_Principal, Arial, Helvetica, sans-serif;
+
+      &:hover {
+        background-color: darken($CrimsonRed, 10%);
+      }
+
+      svg {
+        fill: $blanco;
+      }
+
+      &.CurrentMenu {
+        background-color: $CrimsonRed;
+        color: $blanco;
+
+        svg {
+          fill: $Mustard;
+        }
+      }
+    }
+  }
+  //PaginatorMenu
+  .StepsMenu {
+    h2 {
+      color: $blanco;
+    }
+    p {
+      color: $blanco;
+    }
+  }
+  //PaginatorMenu
+  .seccionMenu {
+    display: none;
+    p {
+      color: $gris;
+    }
+    h2 {
+      color: $blanco;
+    }
+
+    .Complement {
+      color: $blanco;
+    }
+  }
+  //PaginatorMenu
+  .ShowMenu {
+    display: block; /* Mostrar cuando tenga la clase Show */
+  }
+  //PaginatorMenu
+  //ANUNCIO
+  //PaginatorMenu
+  @include tablet {
+    .contenedor-anuncios {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  //PaginatorMenu
+  @include laptop {
+    .contenedor-anuncios {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  //PaginatorMenu
+  .anuncio {
+    border: 5px solid gray;
+    img {
+      background-color: gray;
+    }
+    .contenido-anuncio {
+      padding: 0.5rem;
+    }
+
+    h1 {
+      color: $blanco;
+    }
+
+    p {
+      color: $gris;
+    }
+
+    .Buttom-Precio {
+      background-color: $CrimsonRed;
+      color: $blanco;
+      &:hover {
+        background-color: darken($CrimsonRed, 10%);
+      }
+    }
+  }
+
+  //nosotros
+  .Warning {
+    color: $blanco;
+  }
+  .NoticeParagraph {
+    color: $gris;
+    .SpamNotice {
+      color: $Mustard;
+    }
+  }
+  .AboutMe {
+    color: $blanco;
+  }
+  .AboutMeButton {
+    background-color: $CrimsonRed;
+    border: darken($CrimsonRed, 20%) solid 2px;
+    color: $blanco;
+    &:hover {
+      background-color: darken($CrimsonRed, 10%);
+      border: darken($CrimsonRed, 30%) solid 2px;
+    }
+  }
+
+  //Reservation
+  .Reservation-Information {
+    h1 {
+      color: $blanco;
+    }
+    p {
+      color: $gris;
+    }
+  }
+
+  .Steps {
+    h2 {
+      color: $blanco;
+    }
+    p {
+      color: $gris;
+    }
+    .seccion {
+      display: none;
+      label {
+        color: $blanco;
+      }
+
+      .form-step2 {
+        input[type="text"],
+        input[type="date"],
+        input[type="time"] {
+          background-color: $DarkGray;
+          color: white;
+          &::placeholder {
+            color: $blanco;
+            @include laptop {
+              color: $blanco;
+            }
+          }
+
+          &::-webkit-calendar-picker-indicator {
+            filter: invert(100%);
+          }
+        }
+      }
+    }
+  }
+
+  .ShowSummary {
+    strong {
+      color: $Mustard;
+    }
+
+    p {
+      color: $blanco;
+    }
+
+    .ConfirmReservation {
+      background-color: $Mustard;
+      color: $negro;
+      &:hover {
+        background-color: $BrightOrange;
+      }
+    }
+  }
+
+  .seccion.Show {
+    display: block;
+  }
+
+  .tabsAdmin {
+    background-color: $ElectricSkyBlue;
+    color: $blanco;
+
+    button {
+      background-color: $ElectricSkyBlue;
+      border: $ElectricSkyBlue solid 2px;
+      color: $blanco;
+
+      &:hover {
+        background-color: darken($ElectricSkyBlue, 20%);
+        border: darken($ElectricSkyBlue, 20%) solid 2px;
+      }
+
+      &.CurrentAdmin {
+        background-color: $blanco;
+        border: $ElectricSkyBlue solid 2px;
+        color: $ElectricSkyBlue;
+      }
+    }
+  }
+
+  .StepsAdmin {
+    .AdminPanel {
+      color: $blanco;
+    }
+
+    .WelcomeAdmin {
+      color: $gris;
+    }
+  }
+  .seccionAdmin {
+    display: none;
+    h2 {
+      font-family: $Fuente_Principal, Arial, Helvetica, sans-serif;
+      color: $blanco;
+    }
+
+    p {
+      color: $gris;
+    }
+
+    .date {
+      background-color: $DarkGray;
+      color: white;
+
+      &::placeholder {
+        color: $blanco;
+        font-weight: bold;
+      }
+
+      &::-webkit-calendar-picker-indicator {
+        filter: invert(100%);
+      }
+    }
+
+    a {
+      .EditorButton {
+        background-color: $blanco;
+        border: $gris solid 2px;
+        color: $negro;
+
+        &:hover {
+          background-color: $DarkGray;
+          color: $blanco;
+        }
+      }
+    }
+  }
+  .ShowAdmin {
+    display: block; /* Aplicar prioridad */
+  }
+
+  //STEP NO. 1 RESERVATION
+  .ReservationAdmin {
+    .CustomerReservationInformation {
+      background-color: $NavyBlue;
+      .CustomerReservation,
+      .TableCustomer,
+      .EmailCustomer {
+        color: $blanco;
+      }
+
+      p {
+        color: $blanco;
+      }
+
+      span {
+        color: $Mustard;
+      }
+
+      .Span {
+        color: $Mustard;
+      }
+
+      form {
+        .btDelete {
+          background-color: $ElectricSkyBlue;
+          color: $blanco;
+          border: $blanco solid 2px;
+
+          &:hover {
+            background-color: darken($ElectricSkyBlue, 20%);
+          }
+        }
+      }
+    }
+  }
+
+  //CRUDMenu
+
+  h1 {
+    font-family: $Fuente_Principal, Arial, Helvetica, sans-serif;
+    color: $blanco;
+  }
+
+  p {
+    color: $gris;
+
+    .TextElectricBlue {
+      color: $ElectricBlue;
+    }
+    .TextMustard {
+      color: $Mustard;
+    }
+    .TextCrimsonRed {
+      color: $CrimsonRed;
+    }
+  }
+
+  .button-option {
+    .BTGoback {
+      background-color: $blanco;
+      color: $negro;
+      border: $negro solid 2px;
+
+      &:hover {
+        background-color: darken($blanco, 20%);
+      }
+    }
+    .BTCreate {
+      background-color: $ElectricBlue;
+      color: $blanco;
+      &:hover {
+        background-color: darken($ElectricBlue, 20%);
+      }
+    }
+  }
+
+  .tabsCRUDMenu {
+    background-color: $NavyBlue;
+    color: $blanco;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include laptop {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    button {
+      background-color: $NavyBlue;
+      border: none;
+      color: $blanco;
+      text-transform: uppercase;
+      font-family: $Fuente_Principal, Arial, Helvetica, sans-serif;
+
+      &:hover {
+        background-color: darken($NavyBlue, 10%);
+      }
+
+      svg {
+        fill: $blanco;
+      }
+
+      &.CurrentMenu {
+        background-color: $NavyBlue;
+        color: $blanco;
+
+        svg {
+          fill: $Mustard;
+        }
+      }
+    }
+  }
+
+  .StepsCRUDMenu {
+    h2 {
+      color: $blanco;
+    }
+    p {
+      color: $gris;
+    }
+  }
+
+  .seccionCRUDMenu {
+    p {
+      color: $gris;
+    }
+    h2 {
+      color: $blanco;
+    }
+
+    .Complement {
+      color: $blanco;
+
+      @include tablet {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  .ShowCRUDMenu {
+    display: block;
+  }
+
+  @include tablet {
+    .contenedor-anuncios {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include laptop {
+    .contenedor-anuncios {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .anuncioCURD {
+    background-color: transparent;
+    border: 5px solid gray;
+
+    img {
+      background-color: gray;
+    }
+
+    h1 {
+      color: $blanco;
+    }
+
+    p {
+      color: $gris;
+      @include laptop {
+        font-size: 1.5rem;
+      }
+    }
+
+    .Buttom-Precio {
+      background-color: $CrimsonRed;
+      color: $blanco;
+      font-family: $Fuente_Principal, Arial, Helvetica, sans-serif;
+
+      &:hover {
+        background-color: darken($CrimsonRed, 10%);
+      }
+    }
+
+    .UpdateAndDelete {
+      .BTUpdate {
+        background-color: $Mustard;
+        color: $blanco;
+        border: darken($Mustard, 20%), solid 2px;
+        font-family: $Fuente_Secundaria, Arial, Helvetica, sans-serif;
+        &:hover {
+          border: darken($Mustard, 30%), solid 2px;
+          background-color: darken($Mustard, 10%);
+        }
+      }
+      .BTDelete {
+        background-color: $CrimsonRed;
+        color: $blanco;
+        border: darken($CrimsonRed, 20%), solid 2px;
+        &:hover {
+          border: darken($CrimsonRed, 30%), solid 2px;
+          background-color: darken($CrimsonRed, 10%);
+        }
+      }
+    }
+  }
+
+  //CreateMenu and UpdateMenu
+  .NewProduct {
+    border: $DarkGray solid 5px;
+
+    .TitleandOptions {
+      .NameProduct {
+        background-color: transparent;
+        border: $gris solid 2px;
+        color: $gris;
+        &::placeholder {
+          color: $blanco;
+        }
+      }
+
+      .type {
+        border: $gris, 20%, solid 2px;
+        color: $gris;
+      }
+    }
+
+    .Description {
+      color: $gris;
+      &::placeholder {
+        color: $blanco;
+      }
+    }
+
+    .Price {
+      background-color: $CrimsonRed;
+      border-color: darken($CrimsonRed, 20%);
+      color: $blanco;
+      &::placeholder {
+        color: $blanco;
+      }
+    }
+
+    .BTCreate {
+      background-color: $ElectricBlue;
+      border-color: darken($ElectricBlue, 20%);
+      color: $blanco;
+
+      &:hover {
+        background-color: darken($ElectricBlue, 20%);
+        border-color: darken($ElectricBlue, 30%);
+      }
+    }
+  }
+
+  //CLoseSession
+  .SpanDelete {
+    color: $Mustard;
+  }
+
+  .Explanation {
+     h1 {
+       color: $blanco;
+     }
+   
+     .ExplanationText {
+       p,
+       li {
+         color: $gris;
+         span {
+             font-weight: bold;
+         }
+       }
+   
+     }
+     .ExplanationVideo {
+       margin: 1rem;
+       video {
+         width: 100%;
+         height: auto;
+       }
+     }
+   }
+} //DARK MODE

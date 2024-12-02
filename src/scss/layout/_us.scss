@@ -1,0 +1,48 @@
+.Warning {
+  text-align: center;
+  color: $negro;
+  font-weight: bold;
+  font-size: 2rem;
+  @include tablet {
+    font-size: 4rem;
+  }
+}
+.NoticeParagraph {
+  margin: 1rem;
+  padding: 1rem;
+  color: $DarkGray;
+  font-size: 2rem;
+  .SpamNotice {
+    color: $Charcoal;
+    font-weight: bold;
+    font-size: 2rem;
+  }
+}
+.AboutMe {
+  margin: 1rem;
+  padding: 1rem;
+  text-align: center;
+  color: $Charcoal;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.AboutMeButton {
+  background-color: $Mustard;
+  border: darken($Mustard, 20%) solid 2px;
+  color: $negro;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 1rem;
+  padding: 1rem;
+  width: 92%;
+  cursor: pointer;
+  transition: 1s;
+  &:hover {
+    background-color: darken($Mustard, 10%);
+    border: darken($Mustard, 30%) solid 2px;
+  }
+
+  @include tablet {
+    width: 96%;
+  }
+}

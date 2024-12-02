@@ -1,0 +1,294 @@
+h1 {
+  text-align: center;
+  font-family: $Fuente_Principal, Arial, Helvetica, sans-serif;
+  color: $negro;
+  font-weight: bold;
+  font-size: 2rem;
+
+  @include laptop {
+    font-size: 4rem;
+  }
+}
+
+p {
+  margin: 1rem 0;
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: $DarkGray;
+
+  .TextElectricBlue {
+    color: $ElectricBlue;
+    font-weight: bold;
+  }
+  .TextMustard {
+    color: $Mustard;
+    font-weight: bold;
+  }
+  .TextCrimsonRed {
+    color: $CrimsonRed;
+    font-weight: bold;
+  }
+
+  @include laptop {
+    font-size: 2.5rem;
+  }
+}
+
+.button-option {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1rem;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .BTGoback {
+    text-align: center;
+    background-color: $blanco;
+    color: $negro;
+    border: $negro solid 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: 1s;
+    width: 100%;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($blanco, 20%);
+      border-radius: 2vh;
+    }
+
+    @include laptop {
+      font-size: 2rem;
+    }
+  }
+  .BTCreate {
+    text-align: center;
+    background-color: $ElectricBlue;
+    color: $blanco;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 1rem;
+    transition: 1s;
+    cursor: pointer;
+    width: 100%;
+    &:hover {
+      background-color: darken($ElectricBlue, 20%);
+      border-radius: 2vh;
+    }
+    @include laptop {
+      font-size: 2rem;
+    }
+  }
+}
+
+.tabsCRUDMenu {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  background-color: $NavyBlue;
+  color: $blanco;
+  width: 100%;
+  margin-bottom: 1rem;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include laptop {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  button {
+    background-color: $NavyBlue;
+    border: none;
+    color: $blanco;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-family: $Fuente_Principal, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    transition: 1s;
+    text-align: center;
+
+    &:hover {
+      background-color: darken($NavyBlue, 10%);
+      cursor: pointer;
+    }
+
+    svg {
+      width: 10%;
+      height: auto;
+      fill: $blanco;
+
+      @include tablet {
+        width: 20%;
+      }
+
+      @include laptop {
+        width: 33%;
+      }
+    }
+
+    &.CurrentMenu {
+      background-color: $NavyBlue;
+      color: $blanco;
+
+      svg {
+        fill: $Mustard;
+      }
+    }
+  }
+}
+
+.StepsCRUDMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.seccionCRUDMenu {
+  display: none;
+  h2 {
+    text-align: start;
+    color: $negro;
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0 1rem;
+    font-family: $Fuente_Secundaria, Arial, Helvetica, sans-serif;
+    @include laptop {
+      font-size: 7rem;
+    }
+  }
+  p {
+    text-align: start;
+    color: $DarkGray;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 1rem;
+    @include laptop {
+      font-size: 3rem;
+    }
+  }
+}
+
+.ShowCRUDMenu {
+  display: block;
+}
+
+@include tablet {
+  .contenedor-anuncios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@include laptop {
+  .contenedor-anuncios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.anuncioCURD {
+  background-color: transparent;
+  border: 5px solid gray;
+  margin: 1rem;
+
+  img {
+    width: 100%;
+    height: 20rem;
+    background-color: gray;
+    margin: 0;
+  }
+  .contenido-anuncio {
+    padding: 0.5rem;
+  }
+
+  h1 {
+    text-align: center;
+    font-family: $Fuente_Secundaria, Arial, Helvetica, sans-serif;
+    color: $negro;
+    font-weight: bold;
+    margin: 1rem 0;
+    font-size: 2rem;
+    @include laptop {
+      font-size: 3rem;
+    }
+  }
+
+  p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: $DarkGray;
+    margin: 1rem 0;
+    @include laptop {
+      font-size: 1.5rem;
+    }
+  }
+
+  .Buttom-Precio {
+    background-color: $Mustard;
+    color: $negro;
+    font-size: 2.5rem;
+    font-family: $Fuente_Principal, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 0.5rem;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    transition: 1s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($Mustard, 10%);
+      border-radius: 2vh;
+    }
+  }
+
+  .UpdateAndDelete {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    margin: 1rem;
+    gap: 1rem;
+
+    .BTUpdate {
+      background-color: $Mustard;
+      color: $blanco;
+      border: darken($Mustard, 20%), solid 2px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      padding: 1rem;
+      transition: 1s;
+      width: 100%;
+      cursor: pointer;
+      &:hover {
+        border: darken($Mustard, 30%), solid 2px;
+        background-color: darken($Mustard, 10%);
+      }
+    }
+    .BTDelete {
+      background-color: $CrimsonRed;
+      color: $blanco;
+      border: darken($CrimsonRed, 20%), solid 2px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      padding: 1rem;
+      width: 100%;
+      transition: 1s;
+      cursor: pointer;
+      &:hover {
+        border: darken($CrimsonRed, 30%), solid 2px;
+        background-color: darken($CrimsonRed, 10%);
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+.Info-boxes {
+    background-color: $Fur;
+    margin: 0;
+}
+
+.Paintings {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+
+    @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include laptop {
+        grid-template-columns: 1.5fr 1.5fr 1fr; // 2 columnas de 1.5 y 1 columna de 1fr
+    }
+}
+
+.ChartNo1 {
+    background-color: $negro;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    @include tablet {
+        grid-column: span 2;
+    }
+
+    @include laptop {
+        grid-column: span 1.5; // Cada uno toma 1 columna pero la columna es de 1.5fr
+    }
+}
+.ChartNo2 {
+    background-color: $BrownEarth;
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    @include laptop {
+        grid-column: span 1; // Cada uno toma 1 columna pero la columna es de 1.5fr
+    }
+}
+.ChartNo3 {
+    background-color: $Mustard;
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    @include laptop {
+        grid-column: span 1; // Ocupan las 3 columnas de 1fr cada una
+    }
+}
+.ChartNo4 {
+    background-color: $blanco;
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    @include laptop {
+        grid-column: span 1; // Ocupan las 3 columnas de 1fr cada una
+    }
+}
+.ChartNo5 {
+    background-color: $DarkLimeGreen;
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    @include laptop {
+        grid-column: span 1; // Ocupan las 3 columnas de 1fr cada una
+    }
+}

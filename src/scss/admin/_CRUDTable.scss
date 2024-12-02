@@ -1,0 +1,92 @@
+.TableContainer {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+
+  justify-content: center;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include laptop {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .TableOfContents {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: center;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: $NavyBlue;
+    border-radius: 2vh;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .TableImage {
+      width: 100%;
+      height: auto;
+    }
+
+    .DescriptionTable {
+      text-align: center;
+      color: $Mustard;
+      font-weight: bold;
+      @include tablet {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 1rem;
+      }
+    }
+
+    .UpdateAndDelete {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+      margin: 1rem;
+      gap: 1rem;
+
+      @include tablet {
+        grid-column: span 2;
+      }
+
+      .BTUpdate {
+        background-color: $Mustard;
+        color: $blanco;
+        border: darken($Mustard, 20%), solid 2px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        padding: 1rem;
+        transition: 1s;
+        width: 100%;
+        cursor: pointer;
+        &:hover {
+          border: darken($Mustard, 30%), solid 2px;
+          background-color: darken($Mustard, 10%);
+          border-radius: 2vh;
+        }
+      }
+      .BTDelete {
+        background-color: $CrimsonRed;
+        color: $blanco;
+        border: darken($CrimsonRed, 20%), solid 2px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        padding: 1rem;
+        width: 100%;
+        transition: 1s;
+        cursor: pointer;
+        &:hover {
+          border: darken($CrimsonRed, 30%), solid 2px;
+          background-color: darken($CrimsonRed, 10%);
+          border-radius: 2vh;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+.NewProduct {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: $DarkGray solid 5px;
+    margin: 1rem;
+    max-width: 100%; // Asegura que ocupe todo el ancho disponible en pantallas pequeñas
+  
+    // Ajuste para pantallas grandes
+    @include tablet {
+      justify-content: flex-start;
+      align-items: center;
+      max-width: 30rem; // Limita el ancho máximo a 30rem en tablets y pantallas más grandes
+      margin: 1rem auto; // Centra el contenedor en la pantalla
+    }
+  
+    // Para pantallas más grandes como laptops o desktops
+    @include laptop {
+      max-width: 40rem; // Ampliamos el ancho para pantallas más grandes
+    }
+  
+    @include desktop {
+      max-width: 50rem; // Aún más grande en pantallas muy grandes
+    }
+  
+    .image-upload {
+      // Oculta el input de archivo
+      input[type="file"] {
+        display: none; // Oculta el input de archivo original
+      }
+      img {
+        width: 100%;
+        height: 20rem;
+        object-fit: cover;
+        cursor: pointer; // Cambia el cursor para indicar que es interactivo
+      }
+    }
+  
+    .TitleandOptions {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 1rem 0;
+      width: 100%; // Asegura que ocupe todo el ancho disponible
+  
+      .NameProduct {
+        background-color: transparent;
+        border: $negro solid 2px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1rem;
+        padding: 0.5rem;
+        width: 45%; // Limita el tamaño del campo de nombre
+        margin-left: 0.5rem;
+        cursor: pointer;
+        &::placeholder {
+          color: $DarkGray;
+          font-family: Arial, Helvetica, sans-serif;
+          font-weight: bold;
+        }
+      }
+  
+      .type {
+        background-color: $blanco;
+        border: darken($gris, 20%), solid 2px;
+        border-radius: 2vh;
+        padding: 0.5rem;
+        margin-right: 0.5rem;
+        width: 45%; // Limita el tamaño del select
+        font-family: Arial, Helvetica, sans-serif;
+        cursor: pointer;
+      }
+    }
+  
+    .Description {
+      width: 92%;
+      padding: 0.5rem;
+      border: $negro solid 2px;
+      margin: 0.5rem;
+      height: auto;
+      min-height: 5rem;
+      resize: vertical;
+      font-family: Arial, Helvetica, sans-serif;
+      cursor: pointer;
+      &::placeholder {
+        color: $DarkGray;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+      }
+    }
+  
+    // Ajuste para el campo Price
+    .Price {
+      text-align: center;
+      background-color: $CrimsonRed;
+      border: solid 2px;
+      border-color: darken($CrimsonRed, 20%);
+      color: $blanco;
+      font-family: Arial, Helvetica, sans-serif;
+      width: 92%;
+      padding: 0.5rem;
+      margin: 0.5rem;
+      cursor: pointer;
+      &::placeholder {
+        color: $blanco;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    }
+  
+    .BTCreate {
+      text-align: center;
+      background-color: $ElectricBlue;
+      border: solid 2px;
+      border-color: darken($ElectricBlue, 20%);
+      color: $blanco;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      width: 96.5%;
+      padding: 0.5rem;
+      margin: 0.5rem;
+      transition: 1s;
+      cursor: pointer;
+  
+      &:hover {
+      background-color: darken($ElectricBlue, 20%);
+      border-color: darken($ElectricBlue, 30%);
+      border-radius: 2vh;
+      }
+    }
+  }
+  

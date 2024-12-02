@@ -1,0 +1,136 @@
+.Fondo-Secundario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: auto;
+
+    .Overplay-Secundario {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            270deg,
+            rgba($negro, 25%),
+            rgba(darken($negro, 80%), 80%)
+        );
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; // Centra verticalmente
+        text-align: center;      // Centra el texto
+        z-index: 1;
+    }
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  
+    .carousel-images {
+      display: flex;
+      transition: transform 1s ease-in-out;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+        @include tablet {
+            max-width: 100%;
+        }
+        @include desktop {
+            max-width: 100%;
+        }
+    }
+
+    button {
+      position: absolute;
+      bottom: 0.5rem;
+      transform: translateY(-50%);
+      margin: 0.5rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      border-radius: 100%;
+      cursor: pointer;
+      padding: 0.5rem;
+      z-index: 2;
+        @include laptop {
+            bottom: 50%;
+        }
+      &.prev {
+        left: 0;
+        img {
+            width: 2.5rem;
+            height: 2rem;
+            @include laptop {
+                width: 4.5rem;
+                height: 3.5rem;
+            }
+            @include desktop{
+                width: 5.5rem;
+                height: 4.5rem;
+            }
+          }
+      }
+      &.next {
+        right: 0;
+        img {
+            width: 2.5rem;
+            height: 2rem;
+            @include laptop {
+                width: 4.5rem;
+                height: 3.5rem;
+            }
+            @include desktop{
+                width: 5.5rem;
+                height: 4.5rem;
+            }
+          }
+      }
+
+    }
+  }
+
+
+
+    h2 {
+        font-size: 4rem;
+        color: $blanco;
+        font-family: $Fuente_Secundaria;
+        font-weight: bold;
+        margin: 0;
+        @include tablet {
+            font-size: 8rem;   
+        }
+        @include desktop {
+            font-size: 12rem;
+        }
+    }
+
+    p {
+        font-family: $Fuente_Principal;
+        font-size: 2rem;
+        color: $blanco;
+        margin: 0;
+        @include tablet {
+            font-size: 4rem;
+        }
+        @include desktop {
+            font-size: 8rem;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+/*
+
+
+*/

@@ -1,0 +1,37 @@
+.tabs {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    background-color: $ElectricBlue;
+    color: $blanco;
+    width: 95%;
+    margin-bottom: 1rem;
+
+    @include laptop {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    
+    button {
+        background-color: $ElectricBlue;
+        border: $ElectricBlue solid 2px;
+        border: none;
+        color: $blanco;
+        padding: 1rem;
+        text-transform: uppercase;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        transition: 1s;
+        text-align: center; // Centrar el texto dentro de los botones
+
+        &:hover {
+            background-color: darken($ElectricBlue, 10%);
+            cursor: pointer;
+        }
+
+        &.Current {
+            background-color: $blanco;
+            color: $ElectricBlue;
+            border: $ElectricBlue solid 2px;
+        }
+    }
+}

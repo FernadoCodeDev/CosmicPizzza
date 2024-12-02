@@ -1,0 +1,176 @@
+.Reservation-Information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  h1 {
+    color: $negro;
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0rem;
+    font-family: $Fuente_Principal, Arial, Helvetica, sans-serif;
+
+    @include tablet {
+      font-size: 6rem;
+    }
+
+    @include laptop {
+      font-size: 7rem;
+    }
+  }
+  p {
+    color: $negro;
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    @include laptop {
+      font-size: 3.5rem;
+    }
+  }
+}
+
+.Steps {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  h2 {
+    color: $negro;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    font-family: $Fuente_Principal, Arial, Helvetica, sans-serif;
+    @include laptop {
+      font-size: 5rem;
+    }
+  }
+  p {
+    color: $negro;
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 0 1rem 0;
+
+    @include laptop {
+      font-size: 3.5rem;
+    }
+  }
+  .seccion {
+    display: none;
+    label {
+      font-size: 1.5rem;
+      font-weight: bold;
+      font-family: Arial, Helvetica, sans-serif;
+      color: $negro;
+
+      @include laptop {
+        font-size: 3rem;
+      }
+    }
+
+    .form-step2 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      input[type="text"],
+      input[type="date"],
+      input[type="time"] {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+        background-color: $DarkGray;
+        color: white;
+        font-size: 1rem;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 2vh;
+        border: 0;
+        width: 10rem;
+        &::placeholder {
+          color: $blanco;
+          font-weight: bold;
+          @include laptop {
+            color: $blanco;
+            font-size: 2.5rem;
+          }
+        }
+
+        &::-webkit-calendar-picker-indicator {
+          filter: invert(100%);
+        }
+
+        @include tablet {
+          width: 20rem;
+        }
+
+        @include laptop {
+          width: 40rem;
+          font-size: 2rem;
+          padding: 2rem;
+          border-radius: 4vh;
+        }
+      }
+    }
+  }
+}
+
+.ShowSummary {
+  text-align: start;
+  padding: 1rem;
+  strong {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: $NavyBlue;
+    margin-bottom: 1rem;
+    @include tablet {
+      font-size: 2rem;
+    }
+    @include laptop {
+      font-size: 2.5rem;
+    }
+    @include desktop {
+      font-size: 3rem;
+    }
+  }
+
+  p {
+    color: $negro;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    @include tablet {
+      font-size: 2rem;
+    }
+    @include laptop {
+      font-size: 2.5rem;
+    }
+    @include desktop {
+      font-size: 3rem;
+    }
+  }
+
+  .ConfirmReservation {
+    justify-content: center;
+    background-color: $NavyBlue;
+    border: none;
+    color: $blanco;
+    font-weight: bold;
+    font-size: 3rem;
+    padding: 1rem;
+    font-family: $Fuente_Principal, Arial, Helvetica, sans-serif;
+    margin: 2rem 0;
+    width: 100%;
+    border-radius: 2vh;
+    transition: 1s;
+    cursor: pointer;
+    &:hover {
+      background-color: $ElectricBlue;
+    }
+  }
+}
+
+.seccion.Show {
+  display: block; /* Mostrar cuando tenga la clase Show */
+}

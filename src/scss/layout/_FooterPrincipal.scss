@@ -1,0 +1,25 @@
+/* From Uiverse.io by david-mohseni */ 
+
+.Footer-CrimsonRed {
+  background-color: $CrimsonRed;
+  overflow-x: hidden;
+
+  .navegacion-footer {
+    display: flex; 
+    flex-direction: column;
+
+    a{
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      color: $blanco;
+      text-decoration: none;
+      transition: 1s;
+      padding: 0.5rem;
+      &:hover{
+        color: $Mustard;
+      }
+    }
+    
+  }
+}
+

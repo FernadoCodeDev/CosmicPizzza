@@ -1,0 +1,80 @@
+.body-Confirmation {
+  background-color: $NavyBlue;
+}
+
+.Confirmation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem 1rem;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: $Mustard;
+
+    @include tablet {
+      font-size: 2.5rem;
+    }
+
+    @include laptop {
+      font-size: 3rem;
+    }
+
+    @include desktop {
+      font-size: 4rem;
+    }
+  }
+
+  p {
+    text-align: center;
+    font-size: 1rem;
+    color: $blanco;
+
+    @include tablet {
+      font-size: 1.5rem;
+    }
+
+    @include laptop {
+      font-size: 2rem;
+    }
+
+    @include desktop {
+      font-size: 2.5rem;
+    }
+  }
+
+  .Access-account {
+    color: $blanco;
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 1rem;
+    transition: 1s;
+
+    @include tablet {
+      font-size: 1.5rem;
+    }
+
+    @include laptop {
+      font-size: 2rem;
+    }
+
+    @include desktop {
+      font-size: 2.5rem;
+    }
+
+    &:hover {
+      background-color: $negro;
+      color: $Mustard;
+      border-radius: 2vh;
+    }
+  }
+}

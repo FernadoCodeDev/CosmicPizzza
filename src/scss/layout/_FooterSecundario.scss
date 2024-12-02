@@ -1,0 +1,45 @@
+/* From Uiverse.io by david-mohseni */ 
+
+.Footer-NavyBlue {
+    background-color: $NavyBlue;
+    overflow-x: hidden;
+  
+    .navigation-footer-Secondary {
+      a{
+        display: flex; 
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        color: $blanco;
+        text-decoration: none;
+        transition: 1s;
+        font-size: 1rem;
+        padding: 1rem;
+        margin: 0;
+        &:hover{
+          color: $Mustard;
+        }
+
+        @include tablet{
+        text-align: start;
+        justify-content: flex-start;
+        //background-color: green;
+        font-size: 1.5rem;
+        width: 16%;
+        margin: 0;
+        }
+
+        @include laptop{
+        width: 12%;
+        }
+
+        @include desktop{
+        width: 8%;
+        }
+      }
+    }
+  }
+  
+  

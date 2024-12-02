@@ -1,0 +1,52 @@
+$Fuente_Principal: "Highdream";
+$Fuente_Secundaria: "Highmont";
+
+@font-face {
+  font-family: "Highdream";
+  src: url('/build/font/Highdream/Highdream-Bold.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Highmont";
+  src: url('/build/font/Highmont/HIGHMONT.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+// Tamaño de Media Queries
+$telefono: 480px;
+$tablet: 768px;
+$laptop: 1200px;
+$desktop: 1680px;
+
+// Colores
+$negro: #000000;
+$Charcoal: #1a1a1a;
+$Carbonblack: #141414;
+$DarkGray: #333333;
+$NavyBlue: #031629;
+$ElectricBlue: #036ce4;
+$ElectricSkyBlue: #0e9df3;
+$Mustard: #f09c18;
+$WarmBeige: #fee07e;
+$Fur: #fdedb9;
+$BrightOrange: #f5450d;
+$CrimsonRed: #cf2622;
+$DarkLimeGreen: #639035;
+$BrownEarth: #5e2c22;
+$gris: #e1e1e1;
+$blanco: #FFFFFF;
+
+
+$separacion: 5rem;
+
+// Fuentes
+$delgada: 300;
+$regular : 400;
+$bold: 700;
+$black: 900

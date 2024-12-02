@@ -1,0 +1,48 @@
+.DeleteAccount {
+    display: flex;
+    flex-direction: column;   // Organiza los botones de arriba hacia abajo
+    justify-content: center;  // Centra los botones horizontalmente
+    align-items: center;      // Centra los botones verticalmente
+
+  button {
+    text-align: center;
+    border: $negro solid 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 1rem;
+    margin: 1rem 0 1rem 0;
+    transition: 1s;
+    width: 100%;
+    cursor: pointer;
+
+    &:hover {
+      border-radius: 2vh;
+    }
+
+    @include laptop {
+      font-size: 2rem;
+    }
+  }
+}
+
+.BTGoback {
+  background-color: $blanco;
+  color: $negro;
+  &:hover {
+    background-color: darken($blanco, 20%);
+  }
+}
+
+.SpanDelete {
+  color: $NavyBlue;
+  font-weight: bold;
+}
+
+.BTDeleteAccount {
+  background-color: $CrimsonRed;
+  color: $blanco;
+  &:hover {
+    background-color: #ff0400;
+  }
+}

@@ -1,0 +1,71 @@
+.Listado-Mesas {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  justify-items: center; // Cambia a justify-items para centrar elementos hijos
+  text-align: center;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .DivTable {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center; // Esto afecta el contenido dentro de .DivTable
+    align-items: center;
+    width: 80%;
+    margin: 2rem;
+    height: auto;
+    padding: 1rem;
+    background-color: $NavyBlue;
+    border-radius: 1vh;
+    transition-property: transform;
+    transition: 1s;
+    margin: 0 0 1rem 0; // Mantén esto para centrar el div dentro de Listado-Mesas
+    text-align: center;
+    transition: 1s;
+    &:last-of-type {
+      margin-bottom: 1rem;
+    }
+
+    &.DivSelectTable {
+      background-color: $ElectricBlue;
+      border: $blanco solid 2px;
+      p {
+        color: $blanco;
+        font-weight: bold;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    p {
+      color: $Mustard;
+      font-size: 1rem;
+      font-weight: bold;
+
+      @include laptop {
+        font-size: 2.5rem;
+      }
+    }
+
+    @include laptop {
+      width: 85%;
+      height: auto;
+      &:last-of-type {
+        margin-bottom: 2rem;
+      }
+    }
+
+    .tableimage {
+      width: 100%;
+      height: 15rem;
+
+      @include laptop {
+        height: 20rem;
+      }
+    }
+  }
+}
