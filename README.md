@@ -1,6 +1,5 @@
 # **Acerca de Cosmic Pizza** 🍕
 
-
 Cosmic Pizza es un sistema web diseñado para gestionar de manera eficiente las reservas y el registro de clientes en una pizzería con alta demanda. El proyecto implementa una arquitectura Model View Controller (MVC) y está desarrollado con tecnologías modernas tanto en el frontend como en el backend. Incluye una API personalizada que permite a los usuarios crear reservaciones y a los administradores visualizarlas o eliminarlas.
 
 Este sistema se destaca por su escalabilidad y adaptabilidad, lo que lo hace adecuado para otros negocios que requieren sistemas de reservas o citas previas, como cines, clínicas, restaurantes y agencias inmobiliarias.
@@ -102,6 +101,11 @@ cd public
 ```bash
 php -S localhost:3000
 ```
+3. **Recuerda instalar la carpeta de composer**
+```bash
+composer install
+```
+
 Luego, accede al sistema a través de **la URL dada desde la terminal de VSCODE** en tu navegador.
 
 Al seguir los pasos indicados, deberías poder ver el proyecto **Cosmic Pizza** funcionando.
