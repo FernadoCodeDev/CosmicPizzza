@@ -77,7 +77,12 @@ En Cosmic Pizza, las rutas del administrador están protegidas para evitar acces
 
 La protección de rutas es una medida de seguridad fundamental para evitar que usuarios malintencionados puedan realizar cambios no deseados en el sistema, como alterar el contenido del menú, gestionar reservas o acceder a datos sensibles.
 
-Si decides desactivar esta protección para tu proyecto, simplemente comenta la función **isAdmin();** en las rutas correspondientes. Esta función verifica si el usuario tiene privilegios de administrador antes de permitirle acceder.
+Si decides desactivar esta protección para tu proyecto, simplemente comenta la función
+
+```bash
+isAdmin();
+```
+en las rutas correspondientes. Esta función verifica si el usuario tiene privilegios de administrador antes de permitirle acceder.
 
 **Registro y Sesión de Usuarios**
 
