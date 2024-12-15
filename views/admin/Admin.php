@@ -5,7 +5,7 @@
     <div id="appAdmin" class="StepsAdmin">
 
         <h2 class="AdminPanel">PANEL DE ADMINISTACIÓN</h2>
-        <p class="WelcomeAdmin">Bienvenido Administrador <?php echo $nombre ?></p>
+        <p class="WelcomeAdmin">Bienvenido Administrador</p>
 
         <nav class="tabsAdmin">
             <button class="CurrentAdmin" type="button" data-stepadmin="1">Reservación</button>
