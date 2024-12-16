@@ -106,7 +106,118 @@ php -S localhost:3000
 composer install
 ```
 
-Luego, accede al sistema a través de **la URL dada desde la terminal de VSCODE** en tu navegador.
+## Manejo de Errores Comunes
+
+Después de instalar las dependencias con Composer (lo cual puede tardar unos 2 minutos; espera a que termine porque el archivo autoload.php es esencial para el funcionamiento del sistema), si intentas acceder al proyecto a través de localhost, podrías encontrarte con un error como este:
+
+```bash
+[::1]:56895 [500]: GET / - Uncaught mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\includes\DataBase.php:3
+Stack trace:
+#0 C:\includes\DataBase.php(3): mysqli_connect()
+#1 C:\includes\app.php(9): require('...')
+#2 C:\public\index.php(4): require_once('...')
+#3 {main}
+  thrown in C:\includes\DataBase.php on line 3
+```
+Este error se debe a que el sistema intenta conectarse a una base de datos usando las variables de entorno definidas en el archivo .env, pero como este archivo está excluido del repositorio (por razones de seguridad), el sistema no puede encontrar esas credenciales. En concreto, la línea responsable de este problema es:
+
+```bash
+$db = mysqli_connect($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASS'], $_ENV['DB_NAME']);
+```
+## Soluciones:
+
+**Comentar el Código Temporalmente:** 
+Si aún no tienes una base de datos configurada, puedes evitar este error comentando la línea que establece la conexión. Hazlo de la siguiente manera:
+
+```bash
+/*
+$db = mysqli_connect($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASS'], $_ENV['DB_NAME']);
+todo el código
+*/
+```
+**Comenta todo el código que sale en DataBase.php**
+
+Si ya tienes una base de datos lista o planeas usar una, asegúrate de crear un archivo .env en el directorio raíz del proyecto y define las variables necesarias para la conexión, como en este ejemplo:
+
+```bash
+DB_HOST=localhost
+DB_USER=tu_usuario
+DB_PASS=tu_contraseña
+DB_NAME=nombre_base_de_datos
+```
+
+Este error ocurre porque el sistema espera encontrar las credenciales en el archivo .env. Sin este archivo y sin la configuración adecuada, el sistema no puede establecer la conexión necesaria. Una vez que tengas configurada tu base de datos y el archivo **.env**, el proyecto debería ejecutarse sin problemas.
+
+Una vez resuelto el primer problema, el siguiente que te aparecerá en la terminal será el siguiente:
+
+```bash
+[::1]:57116 [500]: GET / - Uncaught Error: Call to a member function query() on null in C:\models\ActiveRecord.php:42
+Stack trace:
+#0 C:\controllers\LoginController.php(239): Model\ActiveRecord::consultarSQL()
+#1 [internal function]: Controllers\LoginController::inicio()
+#2 C:\Router.php(35): call_user_func()
+#3 C:\public\index.php(105): MVC\Router->comprobarRutas()        
+#4 {main}
+  thrown in C:\models\ActiveRecord.php on line 42
+```
+Este error ocurre porque el sistema intenta ejecutar una consulta SQL utilizando la base de datos, pero no puede acceder a ella porque la conexión no se ha establecido correctamente. Si nos dirigimos a la carpeta **models\ActiveRecord.php**, encontrarás el siguiente código:
+
+```bash
+// Consulta SQL para crear un objeto en Memoria
+public static function consultarSQL($query)
+{
+    $resultado = self::$db->query($query);
+    if ($resultado === false) {
+        die("Error en la consulta: " . self::$db->error);
+    }
+
+    $array = [];
+    while ($registro = $resultado->fetch_assoc()) {
+        $array[] = static::crearObjeto($registro);
+    }
+
+    $resultado->free();
+    return $array;
+}
+```
+
+El problema radica en que self::$db no está definido, lo que provoca el error. Esto se debe a que no se ha establecido la conexión con la base de datos, lo cual es necesario para ejecutar consultas SQL.
+
+**Solución temporal:** Si no has conectado tu base de datos aún, puedes comentar el código de la función consultarSQL usando /**/ de la siguiente forma, o simplemente conecta tu base de datos para que el sistema funcione correctamente.
+
+El último error que te encontrarás al acceder a Cosmic Pizza es el siguiente:
+
+```bash
+[::1]:57251 [500]: GET / - Uncaught Error: Call to undefined method Model\Menu::consultarSQL() in C:\controllers\LoginController.php:239
+Stack trace:
+#0 [internal function]: Controllers\LoginController::inicio()
+#1 C:\Router.php(35): call_user_func()
+#2 C:\public\index.php(105): MVC\Router->comprobarRutas()        
+#3 {main}
+  thrown in C:\controllers\LoginController.php on line 239
+```
+Este error ocurre porque el controlador **LoginController** está intentando llamar al método **consultarSQL()** desde el modelo Menu, pero no se ha establecido una conexión con la base de datos, por lo que el método es considerado "indefinido".
+
+La función 
+```bash
+consultarSQL() 
+```
+es utilizada para consultar los productos de la base de datos y mostrar el menú en la página principal. Sin embargo, como aún no se ha conectado a una base de datos, se produce este error.
+
+**Solución temporal:** Para evitar este error y poder continuar trabajando en el proyecto sin la necesidad de tener la base de datos conectada, puedes comentar la siguiente línea de código en el archivo **LoginController.php**:
+
+```bash
+//$product = Menu::consultarSQL($consulta);
+```
+Con esto, el sistema no intentará realizar la consulta a la base de datos hasta que configures tu base de datos correctamente.
+
+Luego, accede al sistema a través de **la URL dada desde la terminal de VSCODE** en tu navegador .
+
+Una vez comentados esos 3 errores, deberías poder acceder a la página principal de Cosmic Pizza y a algunas otras páginas. Notarás que la terminal sigue mostrando errores; esto puede deberse a otras consultas o métodos que aún intentan interactuar con la base de datos. Sin embargo, podrás ver el proyecto sin problemas.
+
+Los problemas adicionales pueden estar relacionados con otras consultas a la base de datos o con el registro e inicio de sesión, los cuales, al igual que la base de datos, se encuentran configurados en el archivo excluido .env. Para el registro, se está utilizando Mailtrap, así que asegúrate de configurarlo correctamente si necesitas probar el registro de usuarios.
+
+Espero que con esta pequeña guía hayas podido visualizar el proyecto de Cosmic Pizza en tu entorno local y continuar con el desarrollo sin inconvenientes. 😊
 
 Al seguir los pasos indicados, deberías poder ver el proyecto **Cosmic Pizza** funcionando.
 
