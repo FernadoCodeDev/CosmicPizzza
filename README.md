@@ -132,7 +132,8 @@ Si aún no tienes una base de datos configurada, puedes evitar este error coment
 ```bash
 /*
 $db = mysqli_connect($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASS'], $_ENV['DB_NAME']);
-todo el código
+
+resto de código
 */
 ```
 **Comenta todo el código que sale en DataBase.php**
@@ -146,7 +147,7 @@ DB_PASS=tu_contraseña
 DB_NAME=nombre_base_de_datos
 ```
 
-Este error ocurre porque el sistema espera encontrar las credenciales en el archivo .env. Sin este archivo y sin la configuración adecuada, el sistema no puede establecer la conexión necesaria. Una vez que tengas configurada tu base de datos y el archivo **.env**, el proyecto debería ejecutarse sin problemas.
+Este error ocurre porque el sistema espera encontrar las credenciales en el archivo **.env**. Sin este archivo y sin la configuración adecuada, el sistema no puede establecer la conexión necesaria. Una vez que tengas configurada tu base de datos y el archivo **.env**, el proyecto debería ejecutarse sin problemas.
 
 Una vez resuelto el primer problema, el siguiente que te aparecerá en la terminal será el siguiente:
 
@@ -181,9 +182,19 @@ public static function consultarSQL($query)
 }
 ```
 
-El problema radica en que self::$db no está definido, lo que provoca el error. Esto se debe a que no se ha establecido la conexión con la base de datos, lo cual es necesario para ejecutar consultas SQL.
+El problema radica en que 
+```bash
+self::$db 
+```
+no está definido, lo que provoca el error. Esto se debe a que no se ha establecido la conexión con la base de datos, lo cual es necesario para ejecutar consultas SQL.
 
-**Solución temporal:** Si no has conectado tu base de datos aún, puedes comentar el código de la función consultarSQL usando /**/ de la siguiente forma, o simplemente conecta tu base de datos para que el sistema funcione correctamente.
+**Solución temporal:** Si no has conectado tu base de datos aún, puedes comentar el código de la función consultarSQL usando // o /**/
+de la siguiente forma, o simplemente conecta tu base de datos para que el sistema funcione correctamente.
+```bash
+/*
+
+*/
+```
 
 El último error que te encontrarás al acceder a Cosmic Pizza es el siguiente:
 
