@@ -4,7 +4,7 @@ namespace Model;
 
 class UpdateTable extends ActiveRecord
 {
-    public static $tabla = 'mesas'; // Nombre correcto de la tabla en la base de datos
+    public static $tabla = 'mesas'; 
     public static $columnasDB = ['id', 'descripcion', 'imagen']; // tipo es un enum('promocion','pizza','complemento','postre')
     public $id;
     public $descripcion;

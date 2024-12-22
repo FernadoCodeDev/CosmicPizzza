@@ -4,7 +4,7 @@ namespace Model;
 
 class Menu extends ActiveRecord
 {
-    public static $tabla = 'menu'; // Nombre de la tabla en la base de datos
+    public static $tabla = 'menu'; 
     // Columnas de la tabla
     public static $columnasDB = ['id', 'nombre', 'imagen', 'descripcion', 'precio', 'tipo'];
 

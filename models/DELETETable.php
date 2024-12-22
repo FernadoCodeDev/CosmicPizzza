@@ -4,7 +4,7 @@ namespace Model;
 
 class DELETETable extends ActiveRecord
 {
-    public static $tabla = 'mesas'; // Nombre de la tabla en la base de datos
+    public static $tabla = 'mesas'; 
     public static $columnasDB = ['id', 'descripcion', 'imagen'];
 
     public $id;

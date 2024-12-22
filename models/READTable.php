@@ -4,7 +4,8 @@ namespace Model;
 
 class READTable extends ActiveRecord
 {
-    public static $tabla = 'mesas'; // Nombre de la tabla en la base de dato
+    public static $tabla = 'mesas'; 
+   
     // Columnas de la tabla
     public static $columnasDB = ['id', 'descripcion', 'imagen'];
 

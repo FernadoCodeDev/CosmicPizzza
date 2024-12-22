@@ -4,7 +4,7 @@ namespace Model;
 
 class UpdateMenu extends ActiveRecord
 {
-    public static $tabla = 'menu'; // Nombre correcto de la tabla en la base de datos
+    public static $tabla = 'menu'; 
     public static $columnasDB = ['id', 'nombre', 'imagen', 'descripcion', 'precio', 'tipo']; // tipo es un enum('promocion','pizza','complemento','postre')
     public $id;
     public $nombre;
