@@ -24,7 +24,7 @@
         <div id="Step-2" class="seccion">
             <h2>Datos y Reservación</h2>
             <p>Coloca tus datos y fecha de tú reservación</p>
-            <div id="alertas-step-2"></div> <!-- Aquí aparecerán las alertas -->
+            <div id="alertas-step-2"></div> <!--Alertas -->
 
             <form action="" class="form-step2">
                 <div>
@@ -47,7 +47,7 @@
         <div id="Step-3" class="seccion">
             <h2>Resumen</h2>
             <p>Verifica que la información sea correcta</p>
-            <div id="alertas-step-3"></div> <!-- Aquí aparecerán las alertas -->
+            <div id="alertas-step-3"></div> <!--Alertas -->
 
             <div id="ShowSummary" class=""></div>
         </div>

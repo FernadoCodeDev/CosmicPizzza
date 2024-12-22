@@ -15,7 +15,7 @@
 
 <div class="NewTable">
 <form action="/UpdateTable" method="POST" enctype="multipart/form-data">
-<input type="hidden" name="id" value="<?php echo htmlspecialchars($producto->id); ?>"> <!-- Línea corregida -->
+<input type="hidden" name="id" value="<?php echo htmlspecialchars($producto->id); ?>">
 
 <div class="column">
     <div class="image-upload">

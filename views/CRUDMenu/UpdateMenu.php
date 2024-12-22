@@ -15,7 +15,7 @@
 
 <div class="NewProduct">
     <form action="/UpdateMenu" method="POST" enctype="multipart/form-data">
-        <input type="hidden" name="id" value="<?php echo htmlspecialchars($producto->id); ?>"> <!-- Línea corregida -->
+        <input type="hidden" name="id" value="<?php echo htmlspecialchars($producto->id); ?>"> 
 
         <div class="image-upload">
             <label for="imagen">
@@ -29,19 +29,19 @@
 
         <div class="TitleandOptions">
             <input type="text" name="nombre" id="nombre" class="NameProduct"
-                   value="<?php echo htmlspecialchars($producto->nombre); ?>" required> <!-- Línea corregida -->
+                   value="<?php echo htmlspecialchars($producto->nombre); ?>" required> 
             <select name="tipo" id="tipo" class="type" required>
                 <option value="" disabled>Seleccionar Categoría</option>
-                <option value="promocion" <?php echo $producto->tipo === 'promocion' ? 'selected' : ''; ?>>Promoción</option> <!-- Línea corregida -->
-                <option value="pizza" <?php echo $producto->tipo === 'pizza' ? 'selected' : ''; ?>>Pizza</option> <!-- Línea corregida -->
-                <option value="complemento" <?php echo $producto->tipo === 'complemento' ? 'selected' : ''; ?>>Complemento</option> <!-- Línea corregida -->
-                <option value="postre" <?php echo $producto->tipo === 'postre' ? 'selected' : ''; ?>>Postre</option> <!-- Línea corregida -->
+                <option value="promocion" <?php echo $producto->tipo === 'promocion' ? 'selected' : ''; ?>>Promoción</option> 
+                <option value="pizza" <?php echo $producto->tipo === 'pizza' ? 'selected' : ''; ?>>Pizza</option> 
+                <option value="complemento" <?php echo $producto->tipo === 'complemento' ? 'selected' : ''; ?>>Complemento</option> 
+                <option value="postre" <?php echo $producto->tipo === 'postre' ? 'selected' : ''; ?>>Postre</option> 
             </select>
         </div>
 
-        <textarea class="Description" name="descripcion" id="descripcion" placeholder="Descripción" required><?php echo htmlspecialchars($producto->descripcion); ?></textarea> <!-- Línea corregida -->
+        <textarea class="Description" name="descripcion" id="descripcion" placeholder="Descripción" required><?php echo htmlspecialchars($producto->descripcion); ?></textarea> 
         <input type="number" class="Price" name="precio" id="precio" placeholder="Precio"
-               value="<?php echo htmlspecialchars($producto->precio); ?>" required> <!-- Línea corregida -->
+               value="<?php echo htmlspecialchars($producto->precio); ?>" required> 
 
         <button type="submit" class="BTCreate">Actualizar Producto</button>
     </form>

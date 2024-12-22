@@ -42,7 +42,7 @@ $auth = $_SESSION['login'] ?? null;
                 <a href="/Register">Iniciar sesión</a>
             <?php else: ?>
                 <a href="/logout">Cerrar sesión</a> 
-                <a href="/DeleteAccount">Eliminar Cuenta</a>
+                <a href="/CloseSession">Eliminar Cuenta</a>
             <?php endif; ?>
         </nav>
     </div>

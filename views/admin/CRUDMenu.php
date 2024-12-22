@@ -232,7 +232,7 @@
         const buttons = document.querySelectorAll('.tabsCRUDMenu button');
         buttons.forEach(bt => {
             bt.addEventListener('click', function(e) {
-                menu = parseInt(e.target.dataset.stepmenu); // Corrige el dataset para ser "stepmenu"
+                menu = parseInt(e.target.dataset.stepmenu); 
                 MenuSection();
             });
         });

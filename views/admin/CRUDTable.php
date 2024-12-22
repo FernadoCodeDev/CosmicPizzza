@@ -23,7 +23,7 @@
                 <img class="TableImage" src="ImagenBD/<?php echo htmlspecialchars($producto->imagen); ?>" alt="<?php echo htmlspecialchars($producto->imagen); ?>">
                 <p class="DescriptionTable"><?php echo htmlspecialchars($producto->descripcion); ?></p>
                 <div class="UpdateAndDelete">
-                    <a href="/UpdateTable?id=<?php echo htmlspecialchars($producto->id); ?>"> <!--Update donde se tiene que llevar estos datos-->
+                    <a href="/UpdateTable?id=<?php echo htmlspecialchars($producto->id); ?>">
                         <button class="BTUpdate">Actualizar</button>
                     </a>
 
