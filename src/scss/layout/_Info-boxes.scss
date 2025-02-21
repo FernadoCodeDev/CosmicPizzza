@@ -13,7 +13,7 @@
     }
 
     @include laptop {
-        grid-template-columns: 1.5fr 1.5fr 1fr; // 2 columnas de 1.5 y 1 columna de 1fr
+        grid-template-columns: 1.5fr 1.5fr 1fr; 
     }
 }
 
@@ -30,7 +30,7 @@
     }
 
     @include laptop {
-        grid-column: span 1.5; // Cada uno toma 1 columna pero la columna es de 1.5fr
+        grid-column: span 1.5;
     }
 }
 .ChartNo2 {
@@ -41,7 +41,7 @@
     }
 
     @include laptop {
-        grid-column: span 1; // Cada uno toma 1 columna pero la columna es de 1.5fr
+        grid-column: span 1; 
     }
 }
 .ChartNo3 {
@@ -52,7 +52,7 @@
     }
 
     @include laptop {
-        grid-column: span 1; // Ocupan las 3 columnas de 1fr cada una
+        grid-column: span 1; 
     }
 }
 .ChartNo4 {
@@ -63,7 +63,7 @@
     }
 
     @include laptop {
-        grid-column: span 1; // Ocupan las 3 columnas de 1fr cada una
+        grid-column: span 1; 
     }
 }
 .ChartNo5 {
@@ -74,6 +74,6 @@
     }
 
     @include laptop {
-        grid-column: span 1; // Ocupan las 3 columnas de 1fr cada una
+        grid-column: span 1; 
     }
 }

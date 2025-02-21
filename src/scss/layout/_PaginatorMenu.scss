@@ -88,10 +88,9 @@
   }
   
   .ShowMenu {
-    display: block; /* Mostrar cuando tenga la clase Show */
+    display: block; 
   }
   
-  //ANUNCIO
   
   @include tablet {
     .contenedor-anuncios {

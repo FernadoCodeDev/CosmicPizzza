@@ -29,7 +29,7 @@
             <form action="" class="form-step2">
                 <div>
                     <label for="nombre">nombre</label>
-                    <input type="text" id="nombre" value="<?php echo $nombre; ?>"> <!-- No usa disabled para que puedan ver como funciona el sistema de lo contrario nunca lo podran usar / Don't use disabled so they can see how the system works otherwise they will never be able to use it. -->
+                    <input type="text" id="nombre" value="<?php echo $nombre; ?>" disabled> <!-- No usa disabled para que puedan ver como funciona el sistema de lo contrario nunca lo podran usar / Don't use disabled so they can see how the system works otherwise they will never be able to use it. -->
 
                 </div>
                 <div>

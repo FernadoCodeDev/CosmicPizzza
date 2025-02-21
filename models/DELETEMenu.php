@@ -28,7 +28,6 @@ class DELETEMenu extends ActiveRecord
     public function eliminar()
     {
 
-        //ESTE SI LO HACE
         // Eliminar la imagen de la carpeta si existe
         if ($this->imagen) {
             $imagenPath = 'ImagenBD/' . $this->imagen;
@@ -38,10 +37,9 @@ class DELETEMenu extends ActiveRecord
         }
 
         // Eliminar el registro de la base de datos usando MySQLi
-        $query = "DELETE FROM " . self::$tabla . " WHERE id = ? LIMIT 1";  // Cambié :id por ?
-        $stmt = self::$db->prepare($query);  // Asegúrate de usar una conexión MySQLi
+        $query = "DELETE FROM " . self::$tabla . " WHERE id = ? LIMIT 1";  
+        $stmt = self::$db->prepare($query);  
 
-        // Usamos bind_param de MySQLi en lugar de bindParam de PDO
         $stmt->bind_param('i', $this->id); // 'i' para indicar que es un entero
 
         return $stmt->execute(); // Ejecutar la eliminación

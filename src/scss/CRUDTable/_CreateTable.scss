@@ -5,22 +5,20 @@
   background-color: $NavyBlue;
   border-radius: 2vh;
   margin: 1rem;
-  max-width: 100%; // Asegura que ocupe todo el ancho disponible en pantallas pequeñas
-
-  // Ajuste para pantallas grandes
+  max-width: 100%; 
   @include tablet {
     align-items: center;
-    max-width: 40rem; // Limita el ancho máximo a 30rem en tablets y pantallas más grandes
-    margin: 1rem auto; // Centra el contenedor en la pantalla
+    max-width: 40rem; 
+    margin: 1rem auto; 
   }
 
-  // Para pantallas más grandes como laptops o desktops
+  
   @include laptop {
-    max-width: 60rem; // Ampliamos el ancho para pantallas más grandes
+    max-width: 60rem; 
   }
 
   @include desktop {
-    max-width: 80rem; // Aún más grande en pantallas muy grandes
+    max-width: 80rem; 
   }
 
   .column {
@@ -33,16 +31,16 @@
     }
 
     .image-upload {
-      // Oculta el input de archivo
+    
       input[type="file"] {
-        display: none; // Oculta el input de archivo original
+        display: none;
       }
       img {
         width: 100%;
         height: auto;
         object-fit: cover;
         border-radius: 1vh;
-        cursor: pointer; // Cambia el cursor para indicar que es interactivo
+        cursor: pointer; 
       }
     }
 

@@ -1,7 +1,7 @@
 .Listado-Mesas {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  justify-items: center; // Cambia a justify-items para centrar elementos hijos
+  justify-items: center; 
   text-align: center;
 
   @include tablet {
@@ -11,7 +11,7 @@
   .DivTable {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    justify-content: center; // Esto afecta el contenido dentro de .DivTable
+    justify-content: center; 
     align-items: center;
     width: 80%;
     margin: 2rem;
@@ -21,7 +21,7 @@
     border-radius: 1vh;
     transition-property: transform;
     transition: 1s;
-    margin: 0 0 1rem 0; // Mantén esto para centrar el div dentro de Listado-Mesas
+    margin: 0 0 1rem 0; 
     text-align: center;
     transition: 1s;
     &:last-of-type {

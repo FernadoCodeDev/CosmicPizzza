@@ -10,7 +10,7 @@ use MVC\Router;
 
 class MenuController
 {
-
+    
     public static function CRUDMenu(Router $router)
     {
         isAdmin();
@@ -134,14 +134,13 @@ class MenuController
                 header('Location: /CRUDMenu');  // Redirigir a la página de administración después de eliminar
                 exit();  // Asegurarse de que no se ejecute más código después de la redirección
             } else {
-                // Puedes manejar el caso de error si el menú no existe
                 echo "El menú no existe.";
             }
         }
 
         // Renderizar la vista de administración para mostrar la lista de menús
         $router->render('admin/CRUDMenu', [
-            // Puedes pasar datos como los menús existentes, si es necesario
+            
         ]);
     }
 }
